@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /
+
+# Tijdelijk niet indexeren. Preview/concept alleen.
+# For AI agents: /llms.txt
