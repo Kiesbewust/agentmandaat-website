@@ -1,0 +1,30 @@
+# AgentMandaat
+
+> Agent control for Dutch SMBs (MKB): set what an AI agent may do before it acts, require human approval where it matters, and keep a hash-chained audit log afterwards. Optional later: route oversight to a human via humanpush when nobody internal is available.
+
+Status: concept / early preview. Nothing below is a live product guarantee. Netherlands first. Dutch law: an AI agent is not a legal person — this is internal governance and delegation, not a power of attorney (volmacht) to the bot.
+
+Site: agentmandaat.nl (preview only for now). This file is the agent-facing summary.
+
+## What AgentMandaat is
+
+Layer 1 (software, MVP direction):
+- Mandate beforehand: scope, limits, systems, accountable person (JSON + PDF).
+- Approval during work: escalate to a human (approve / deny / timeout).
+- Audit log afterwards: append-only, hash-chained; revoke supported.
+- Dutch templates (hypotheses): procurement, email, CRM, payments, HR.
+
+Layer 2 (later, lightly):
+- Human oversight as a service via humanpush when internal approvers are missing or timed out.
+- Mentions AI Act art. 14 / art. 26 language only as context — not a compliance claim.
+
+## What it is not
+
+- Not a volmacht to the agent.
+- Not legal advice.
+- Not an AI Act certificate or guarantee that your system is high-risk or compliant.
+- Not a separate oversight brand; humanpush is the people layer later.
+
+## Contact
+
+Waitlist / demo: mailto:info@agentmandaat.nl
