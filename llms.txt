@@ -1,30 +1,25 @@
 # AgentMandaat
 
-> Agent control for Dutch SMBs (MKB): set what an AI agent may do before it acts, require human approval where it matters, and keep a hash-chained audit log afterwards. Optional later: route oversight to a human via humanpush when nobody internal is available.
+> Governance for AI agents in Dutch SMBs (MKB, 20–200 employees): record what each agent may do, have the agent check that mandate before every action, and keep a hash-chained audit log that others can verify themselves.
 
-Status: concept / early preview. Nothing below is a live product guarantee. Netherlands first. Dutch law: an AI agent is not a legal person — this is internal governance and delegation, not a power of attorney (volmacht) to the bot.
+Status: pilot phase. There is a working demo with a fictional company; no product for sale and no customers yet. Netherlands first. Under Dutch law an AI agent is not a legal person: this is internal governance and delegation, not a power of attorney (volmacht) to the agent.
 
-Site: agentmandaat.nl (preview only for now). This file is the agent-facing summary.
+Site: agentmandaat.nl (preview, not indexed). This file is the agent-facing summary.
 
-## What AgentMandaat is
+## What the demo does
 
-Layer 1 (software, MVP direction):
-- Mandate beforehand: scope, limits, systems, accountable person (JSON + PDF).
-- Approval during work: escalate to a human (approve / deny / timeout).
-- Audit log afterwards: append-only, hash-chained; revoke supported.
-- Dutch templates (hypotheses): procurement, email, CRM, payments, HR.
-
-Layer 2 (later, lightly):
-- Human oversight as a service via humanpush when internal approvers are missing or timed out.
-- Mentions AI Act art. 14 / art. 26 language only as context — not a compliance claim.
+- Mandate: scope (allowed and prohibited actions), systems, amount limits per action and per month, who approves, accountable person, validity. Templates: procurement, email on behalf of the company, CRM changes, HR (prepare only). Output as JSON and as a PDF to sign by hand, with a content hash.
+- Check before every action: the agent asks first and gets allow, needs approval (a human decides on an approval page; the decision is sent back by webhook) or deny, always with a reason. Integration via HTTP API, webhook (e.g. n8n) or MCP.
+- Audit log: every check and decision is a hash-chained entry. Export as CSV, JSON or PDF. A standalone page lets a third party re-verify the chain without the AgentMandaat server. The latest hash can be downloaded or mailed daily to keep a copy outside the system.
+- Revoke: one button; afterwards every check is denied and pending approvals expire.
 
 ## What it is not
 
-- Not a volmacht to the agent.
-- Not legal advice.
-- Not an AI Act certificate or guarantee that your system is high-risk or compliant.
-- Not a separate oversight brand; humanpush is the people layer later.
+- Not a power of attorney for the agent and not legal advice.
+- Not a certification and not a claim of AI Act compliance.
+- No claim that the log is legally valid evidence; whether insurers, buyers or accountants accept it is what the pilot tests. The PDF has no electronic signature.
+- It only enforces where the agent can call a check before acting. AI built into a software package without such a hook is covered by the mandate as a document only.
 
 ## Contact
 
-Waitlist / demo: mailto:info@agentmandaat.nl
+Pilot: mailto:info@agentmandaat.nl?subject=Pilot%20AgentMandaat (placeholder address)
